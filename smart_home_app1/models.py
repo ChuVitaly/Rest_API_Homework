@@ -1,7 +1,6 @@
 from django.db import models
 
 class Sensor(models.Model):
-
     name = models.TextField()
     description =models.TextField()
     latitude = models.FloatField()
@@ -15,8 +14,7 @@ class Sensor(models.Model):
 
 
 class Measurement(models.Model):
-
-    value = models.FloatField()
+    temperature = models.FloatField()
     sensor = models.ForeignKey(Sensor, on_delete=models.CASCADE)
     created_at = models.DateTimeField(
         auto_now_add=True
