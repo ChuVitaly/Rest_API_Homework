@@ -1,8 +1,9 @@
 from django.db import models
 
-class Facility(models.Model):
+class Sensor(models.Model):
 
     name = models.TextField()
+    description =models.TextField()
     latitude = models.FloatField()
     longitude = models.FloatField()
     created_at = models.DateTimeField(
@@ -16,7 +17,7 @@ class Facility(models.Model):
 class Measurement(models.Model):
 
     value = models.FloatField()
-    facility = models.ForeignKey(Facility, on_delete=models.CASCADE)
+    sensor = models.ForeignKey(Sensor, on_delete=models.CASCADE)
     created_at = models.DateTimeField(
         auto_now_add=True
     )

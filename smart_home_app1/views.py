@@ -1,13 +1,13 @@
 from rest_framework import viewsets
 from rest_framework.viewsets import ModelViewSet
 
-from smart_home_app1.models import Facility, Measurement
-from smart_home_app1.serializers import FacilitySerializer, MeasurementSerializer
+from smart_home_app1.models import Sensor, Measurement
+from smart_home_app1.serializers import SensorSerializer, MeasurementSerializer
 
 
-class FacilityViewSet(viewsets.ModelViewSet):
-    queryset = Facility.objects.all()
-    serializer_class = FacilitySerializer
+class SensorViewSet(viewsets.ModelViewSet):
+    queryset = Sensor.objects.all()
+    serializer_class = SensorSerializer
 
 
 class MeasurementViewSet(ModelViewSet):

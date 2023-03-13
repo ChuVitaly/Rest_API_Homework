@@ -19,7 +19,7 @@ from rest_framework.routers import DefaultRouter
 from smart_home_app1 import views
 
 router = DefaultRouter()
-router.register(r'facility', views.FacilityViewSet,basename="facility")
+router.register(r'sensor', views.SensorViewSet,basename="sensor")
 router.register(r'measurement', views.MeasurementViewSet,basename="measurement")
 
 urlpatterns = [
