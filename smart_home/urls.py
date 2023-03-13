@@ -15,14 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from rest_framework.routers import DefaultRouter
 from smart_home_app1 import views
 
-router = DefaultRouter()
-router.register(r'sensor', views.SensorViewSet,basename="sensor")
-router.register(r'measurement', views.MeasurementViewSet,basename="measurement")
-
 urlpatterns = [
+    path('sensors/', views.SensorList.as_view()),
+    path('sensors/<int:pk>/', views.SensorDetail.as_view()),
+    path('measurements/', views.MeasurementList.as_view()),
+
     path('admin/', admin.site.urls),
-    path('', include(router.urls)),
 ]
