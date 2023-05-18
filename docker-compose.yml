@@ -1,11 +1,7 @@
----
-version: "3"
+version: '3'
 services:
-  api:
-    build: ./app
-     dockerfile: Dockerfile
-    command: python3 manage.py runserver localhost:8000
-    ports:
-      - 8000:8000
-    volumes:
-      - .:/code
+   api:
+       build: .
+       command: python3 manage.py runserver localhost:8000
+       ports:
+           - 8000:8000
