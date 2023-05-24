@@ -1,7 +1,14 @@
-version: '3'
+---
+version: "3"
 services:
-   api:
-       build: .
-       command: python3 manage.py runserver localhost:8000
-       ports:
-           - 8000:8000
+  api:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data:/app/data
+    environment:
+      DB_NAME: "/app/data/db.sqlite3"
+      DB_ENGINE: "django.db.backends.sqlite3"
+      DEBUG: "False"
