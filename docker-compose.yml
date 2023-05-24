@@ -2,10 +2,13 @@
 version: "3"
 services:
   api:
-    build: ./app
-     dockerfile: Dockerfile
-    command: python3 manage.py runserver localhost:8000
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
     ports:
-      - 8000:8000
+      - "8000:8000"
     volumes:
-      - .:/code
+      - ./data:/app/data
+    environment:
+      DB_NAME: "/app/data/db.sqlite3"
+      DB_ENGINE: "django.db.backends.sqlite3"
+      DEBUG: "False"
