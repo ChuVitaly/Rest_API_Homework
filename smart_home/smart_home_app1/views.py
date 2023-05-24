@@ -1,8 +1,8 @@
-from rest_framework import viewsets, generics
+from rest_framework import generics
 
 
-from smart_home_app1.models import Sensor, Measurement
-from smart_home_app1.serializers import SensorSerializer, MeasurementSerializer
+from smart_home.smart_home_app1.models import Sensor, Measurement
+from smart_home.smart_home_app1.serializers import SensorSerializer, MeasurementSerializer
 
 
 class SensorList(generics.ListAPIView):

@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from smart_home_app1.models import Sensor, Measurement
+from smart_home.smart_home_app1.models import Sensor, Measurement
 
 class SensorSerializer(serializers.ModelSerializer):
     class Meta:
